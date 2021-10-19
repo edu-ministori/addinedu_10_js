@@ -1,1 +1,1 @@
-# addinedu_10_js
+# Javascript
