@@ -592,3 +592,90 @@ https://www.w3schools.com/js/js_json.asp
 - javascript 언어 속에 미리 정의되어 있는 객체
 - String, Array, Date, Math ...
 - 내장객체의 property와 method를 사용해서 기능실행
+
+## Javascript 활용
+
+### Event(이벤트)
+
+- 사용자의 행동에 의해서 발생되는 변화의 신호
+- 마우스, 키보드, 터치 관련 이벤트
+- 이벤트 동작 흐름
+
+  - 변화 발생
+  - 변화와 관련된 이벤트(신호) 발생
+  - 발생된 이벤트를 감지해서 상황에 맞는 기능/동작 실행
+
+- 발생되는 이벤트 종류
+- 이벤트 감지 함수
+- 기능/동작 실행
+
+> 이벤트 종류
+>
+> - 마우스 : click, mouse move, mouse over
+> - 키보드 : key down(press), change
+
+> 이벤트 감지 함수
+>
+> - addEventListener()
+
+```
+사용방식
+
+객체(DOM).addEventListener(이벤트종류, 함수);
+```
+
+> 실행 함수
+>
+> - 함수 호출
+> - 익명 함수
+
+### HTML DOM(Document Object Model)
+
+- Document(HTML 문서 : body)
+- HTML Element를 객체화 시킨것
+- DOM을 사용해서 javascript가 HTML을 제어
+  - DOM 객체에 포함된 property, method를 사용
+
+> HTML Element 내용
+>
+> - HTML Element를 추가, 출력, 수정, 삭제
+> - (C)reate (R)ead (U)pdate (D)elete
+>
+> HTML Element 효과
+>
+> - 시각적 효과 : 애니메이션, show/hide
+
+> DOM(Document Object Model) 객체
+>
+> - document : HTML Element 중에서 가장 최상위 객체
+
+> BOM(Browser Object Model) 객체
+>
+> - window : 브라우저 관련 최상위 객체
+
+### DOM Access Method
+
+> HTML4 API
+>
+> - id 이름으로 DOM Access : document.getElementById()
+> - class 이름으로 DOM Access : document.getElementsByClassName()
+> - Tag 이름으로 DOM Access : document.getElementsByTagName()
+
+> HTML5 API
+>
+> - 1개 DOM Access : document.querySelector('CSS 선택자 형식')
+> - 여러개 DOM Access : document.querySelectorAll('CSS 선택자 형식')
+
+### DOM Contents - CRUD
+
+> Create(생성)
+>
+> - DOM 생성 : Javascript에서 HTML Element 동적(Dynamic) 생성
+>   - HTML 직접 코딩 => 정적 코딩
+> -
+>
+> Read
+>
+> Update
+>
+> Delete
