@@ -10,16 +10,83 @@
   <h1>배열 / 객체 / Class<h1>
 </body>
 <script>
+  // 배열 데이터
   const cars = ['volvo', 'bmw', 'saab'];
 
-  console.log(cars);
-  console.log(cars[0]);
-  console.log(cars[1]);
+  // console.log(cars);
+  // console.log(cars[0]);
+  // console.log(cars[1]);
+  // console.log(cars[2]);
 
+  // 변경
   cars[0] = 'hyundai';
+  // console.log(cars);
 
-  console.log(cars);
+  // const 키워드를 사용해서 배열을 선언시
+  // 배열 데이터의 원소는 변경, 추가, 삭제 가능
+  // 다른 배열 데이터로 변경은 불가능
 
-  // const 키워드를 사용해서 배열선언시 각 원소의 값을 변경 가능
+  // cars = ['hyundai', 'chevrolet', 'kia'];
+
+  // for(let i=0; i<3; i++){
+    // console.log(cars[i]);
+  // }
+
+  // 추가
+  cars.push('kia');
+  // console.log(cars);
+
+  // 삭제
+  cars.pop();
+  // console.log(cars);
+
+  // 객체 데이터
+  const car = {
+    type:'Fiat',
+    model:'500',
+    color:'white',
+    fullName:function(){
+      return this.type + this.model;
+    }
+  }
+
+  console.log(car);
+  // console.log(car.type);
+
+  // 메소드(함수) 사용(호출)
+  console.log( car.fullName() );
+
+  // 변경
+  car.type = 'Kia';
+  console.log(car);
+  // console.log(car.type);
+
+  // 추가
+  car.weight = '850kg';
+  console.log(car);
+
+  // 삭제
+  delete car.model;
+  console.log(car);
+
+  // 클래스 
+  class Car{
+    constructor(name, year){
+      this.name = name;
+      this.year = year;
+    }
+    printYear(){
+      return this.year;
+    }
+  }
+
+  let car1 = new Car('hyundai', 2021);
+  let car2 = new Car('Kia', 2022);
+
+  console.log(car1);
+  console.log(car2);
+
+  console.log(car1.printYear());
+  console.log(car2.printYear());
 </script>
 </html>

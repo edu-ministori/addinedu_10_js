@@ -427,9 +427,34 @@ function 함수이름([매개변수]){
 ** [] : 생략가능
 ```
 
+```
+함수 선언 형식
+
+function 함수이름(){
+  // 코드블럭
+}
+
+let(const) 변수이름(함수이름) = function(){
+  // 코드블럭
+}
+
+익명함수
+
+function(){
+  // 코드블럭
+}
+
+- 함수이름을 변수처럼 사용하는 경우
+- 함수이름 필요없이 바로 실행하는 경우
+```
+
 ### JS Array(배열)
 
+https://www.w3schools.com/js/js_arrays.asp
+
 - 개수가 많은 데이터를 대표되는 하나의 변수 이름으로 저장할 때 사용하는 데이터 타입
+- [] : 인덱스 번호
+- 배열도 객체 데이터
 
 ```
 배열 선언
@@ -440,7 +465,130 @@ cars[0] = 'volvo';
 cars[1] = 'bmw';
 cars[2] = 'saab';
 
-배열 변경
+배열 접근(access) / 추가 / 변경 / 삭제
 
+변경
 cars[0] = 'hyundai';
+
+추가
+cars.push('kia'); => 마지막 위치에 원소 추가
+
+삭제
+cars.pop(); => 마지막 원소를 삭제
 ```
+
+### JS Object(객체)
+
+https://www.w3schools.com/js/js_objects.asp
+
+- 데이터들을 어떤 실제 대상에 가깝데 다루고자 할 때
+- 객체데이터는 property, method
+- 각각의 객체데이터는 name:value로 구성됨(key:value)
+- 객체 메소드에 사용되는 this는 해당 객체를 의미함
+- 객체 메소드에서 객체 프로퍼티를 사용할때는 this를 사용해서 객체를 명시해야 함
+
+```
+객체 선언
+
+const car = {
+  type:'Fiat',
+  model:'500',
+  color:'white',
+  fullName: function(){
+    return this.type + this.model;
+  }
+}
+
+객체 접근(access) / 추가 / 변경 / 삭제
+
+console.log(car.type);
+
+변경
+car.type = 'Kia';
+
+추가
+car.weight = '850kg';
+
+삭제
+delete car.model;
+```
+
+### JS Class(클래스)
+
+https://www.w3schools.com/js/js_classes.asp
+
+> Class
+>
+> - 객체 데이터를 생성하기 위한 설계도
+> - 클래스를 사용해서 만든 객체 데이터 : Instance(인스턴스)
+> - 클래스 이름은 대문자로 시작
+> - this : 해당 클래스 객체를 의미함
+
+```
+클래스 선언
+
+class Car{
+  constructor(name, year){ // 생성자 함수 => property 생성
+    this.name = name; // this.name : 객체 property 이름 name
+    this.year = year; // this.year : 객체 property 이름 year
+  }
+  printYear(){
+    return this.year;
+  }
+}
+
+let car1 = new Car('hyundai', 2021);
+let car2 = new Car('Kia', 2022);
+
+car1.name
+car1.printYear()
+
+car2.year
+car2.printYear()
+```
+
+### JS scope
+
+https://www.w3schools.com/js/js_scope.asp
+
+> 변수 적용(접근) 범위
+>
+> - Block Scope : 블럭 범위 - 명령문/구문의 코드 블럭 영역
+> - Function Scope : 함수 범위 - 함수 선언 영역
+> - Global Scope : 전역 범위 - 프로그래밍 전체 영역
+
+> 변수 Scope 적용 원리
+>
+> - 전역 영역, 함수 영역, 블럭 영역이 포함 관계로 되어 있을 때 적용 가능
+> - 포함하고 있는 큰 영역에서 선언된 변수는 포함되는 작은 영역에서는 사용 가능
+> - 포함되는 작은 영역에서 선언된 변수는 포함하는 큰 영역에서는 사용 불가능
+> - 포함 관계로 되어 있지 않은 서로 다른 영역에서는 접근 불가능
+
+### JS Arrow Function
+
+https://www.w3schools.com/js/js_arrow_function.asp
+
+```
+let hello = function(){
+  return 'Hello World';
+}
+
+let hello = () => {
+  return 'Hello World';
+}
+```
+
+> function으로 정의되는 일반함수와 화살표 함수는 this의 의미가 다름
+>
+> - 일반 함수는 최종적으로 함수를 호출한 대상의 객체 : this
+> - 화살표 함수는 함수가 포함된 최상위 객체 : this
+
+### JSON
+
+https://www.w3schools.com/js/js_json.asp
+
+### 내장객체
+
+- javascript 언어 속에 미리 정의되어 있는 객체
+- String, Array, Date, Math ...
+- 내장객체의 property와 method를 사용해서 기능실행
